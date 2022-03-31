@@ -5,7 +5,7 @@
 // @author      Glorfindel
 // @updateURL   https://raw.githubusercontent.com/Glorfindel83/SE-Userscripts/master/saviour-of-lost-souls/saviour-of-lost-souls.user.js
 // @downloadURL https://raw.githubusercontent.com/Glorfindel83/SE-Userscripts/master/saviour-of-lost-souls/saviour-of-lost-souls.user.js
-// @version     2.5.1
+// @version     2.6.0
 // @match       *://meta.stackexchange.com/*
 // @match       *://meta.stackoverflow.com/*
 // @match       *://softwarerecs.stackexchange.com/*
@@ -26,7 +26,7 @@ let isMeta = location.host.startsWith('meta');
 let isBeta = location.host == 'hardwarerecs.stackexchange.com';
 
 // My reputation / privileges
-let myReputation = parseInt($('a.my-profile div.-rep')[0].innerText.replace(/,/g, ''));
+let myReputation = parseInt($('.s-topbar--content .s-user-card li.s-user-card--rep')[0].innerText.replace(/,/g, ''));
 let hasCommentPrivilege = myReputation >= (isMetaSE ? 5 : 50);
 let hasFlagPrivilege = myReputation >= 15;
 let hasUpvotePrivilege = myReputation >= 15;
